@@ -24,6 +24,7 @@ Occupancy	Status
 ≥ 90%	✅ Fully stocked
 60% – 90%	🟡 Partially stocked
 < 60%	🔴 Restock urgently
+
 📊 Datasets
 Model	Dataset	Details
 Product detector	SKU-110K (CVPR 2019)	11,743 densely packed shelf images, 1 class; 20% of the training set used
@@ -40,6 +41,7 @@ Batch size	16
 Early stopping patience	8 (product), 12 (empty-space)
 Confidence threshold	0.30 (product), 0.35 (empty-space)
 Hardware	Google Colab, NVIDIA T4 GPU
+
 📈 Results
 Model	mAP@0.5	mAP@0.5:0.95	Precision	Recall
 Product detector (SKU-110K)	____	____	____	____
@@ -60,6 +62,7 @@ ShelfSense-Retail-Shelf-Detection/
 ├── report/
 │   └── Retail_Shelf_Product_Detection_Report.pdf
 └── README.md
+
 🚀 How to Run
 Open ShelfSense_v2_YOLOv8.ipynb in Google Colab.
 Go to Runtime → Change runtime type → T4 GPU.
@@ -81,17 +84,19 @@ Counts products but does not identify brands, because SKU-110K has a single clas
 The empty-space model sometimes draws overlapping boxes on the same gap, which lowers the occupancy value.
 Very small or heavily overlapping products can be missed at 640 px.
 Only 20% of SKU-110K was used because of Colab time limits.
+
 🔮 Future Scope
 Brand recognition on product crops (classifier or CLIP embeddings)
 Merge overlapping empty-space boxes before calculating area
 Planogram compliance checking
 Live CCTV video monitoring with automatic restock alerts
 Export to ONNX / TensorRT for edge devices
+
 📚 References
 E. Goldman et al., "Precise Detection in Densely Packed Scenes", CVPR, 2019.
 J. Redmon et al., "You Only Look Once: Unified, Real-Time Object Detection", CVPR, 2016.
 Ultralytics YOLOv8 Documentation
 Gradio Documentation
-👤 Author
 
+👤 Author
 Farhad Shajahan V K
